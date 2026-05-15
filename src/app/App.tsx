@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer";
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen overflow-y-hidden *:overflow-y-hidden">
+      <div className="min-h-screen mx-2 overflow-y-hidden *:overflow-y-hidden">
         <Navbar />
         <Hero />
         <About />
