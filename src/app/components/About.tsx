@@ -4,9 +4,13 @@ import { profileData } from "../data/profile";
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white overflow-y-hidden dark:bg-gray-900">
+    <section
+      id="about"
+      className="py-20 bg-white dark:bg-gray-900 overflow-x-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* LEFT TEXT */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -30,6 +34,7 @@ export function About() {
             </p>
           </motion.div>
 
+          {/* RIGHT IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,14 +42,16 @@ export function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+            {/* IMAGE WRAPPER */}
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl relative">
               <ImageWithFallback
                 src={profileData.image.url}
                 alt={profileData.image.alt}
-                className="w-full h-full object-cover overflow-y-hidden"
+                className="w-full h-full object-cover"
               />
             </div>
 
+            {/* DECORATIVE BOX 1 */}
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -53,6 +60,7 @@ export function About() {
               className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 dark:bg-blue-500 rounded-2xl -z-10"
             />
 
+            {/* DECORATIVE BOX 2 */}
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
