@@ -4,7 +4,7 @@ import { profileData } from "../data/profile";
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className="py-20 bg-white overflow-y-hidden dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -41,7 +41,7 @@ export function About() {
               <ImageWithFallback
                 src={profileData.image.url}
                 alt={profileData.image.alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover overflow-y-hidden"
               />
             </div>
 
