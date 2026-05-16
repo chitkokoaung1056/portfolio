@@ -24,7 +24,7 @@ export interface ProfileData {
 export const profileData: ProfileData = {
   name: "Chit Ko Ko Aung",
   title: "Computer Science Student | Full-Stack Developer",
-  image: { url: "image copy.png", alt: "Professional workspace" },
+  image: { url: "ProfilePhoto.png", alt: "Professional workspace" },
   description:
     "Final-year Computer Science student building full-stack web apps with modern JavaScript ecosystems.",
   email: "chitkokoaung1056@gmail.com",

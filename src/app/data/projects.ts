@@ -19,7 +19,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Supabase", "Tailwind", "Shadcn UI"],
     category: "web",
     githubUrl: "https://github.com/chitkokoaung1056/taskhub",
-    demoUrl: 'https://taskhub-ashy.vercel.app/'
+    demoUrl: "https://taskhub-ashy.vercel.app/",
   },
   {
     title: "MovieNest",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "React", "Tailwind", "Shadcn UI"],
     category: "web",
     githubUrl: "https://github.com/chitkokoaung1056/movienest",
-    demoUrl: 'https://movie-nest-beige.vercel.app/'
+    demoUrl: "https://movie-nest-beige.vercel.app/",
   },
   {
     title: "Online Grading System",
@@ -40,11 +40,28 @@ export const projects: Project[] = [
     category: "web",
   },
   {
+    title: "NoxWeather",
+    description:
+      "Weather app built with React Native & Expo. Features real-time weather, forecasts, UV index, and sunrise/sunset tracking.",
+    image: "/NoxWeather.png",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "OpenWeather API",
+      "NativeWind",
+    ],
+    category: "mobile",
+    githubUrl: "https://github.com/chitkokoaung1056/NoxWeather",
+  },
+  {
     title: "Notezy",
     description:
       "Simple mobile note-taking app with local storage for quick task and note management.",
-    image: "/src/images/noteapp.png",
+    image: "Notezy.png",
     tags: ["React Native", "AsyncStorage"],
     category: "mobile",
+    
+    githubUrl: "https://github.com/chitkokoaung1056/notezy",
   },
 ];

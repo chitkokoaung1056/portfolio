@@ -74,30 +74,60 @@ export function Projects() {
             >
               <Card className="overflow-hidden h-full flex flex-col dark:bg-gray-800 dark:border-gray-700 hover:shadow-2xl transition-all duration-300">
                 
-                {/* IMAGE SECTION (MODERN) */}
-                <div className="aspect-video relative overflow-hidden group bg-gray-100 dark:bg-gray-700">
-                  <motion.div
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.4 }}
-                    className="w-full h-full"
-                  >
-                    <ImageWithFallback
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
+                {/* IMAGE SECTION - Responsive for both web and mobile */}
+                {project.category === "mobile" ? (
+                  /* 📱 MOBILE DEVICE MOCKUP */
+                  <div className="relative bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 py-8 px-4 flex items-center justify-center">
+                    {/* Phone Frame */}
+                    <div className="relative w-[200px] sm:w-[220px] md:w-[240px] aspect-[9/19] rounded-[2rem] sm:rounded-[2.5rem] border-[6px] sm:border-[8px] border-black shadow-2xl overflow-hidden bg-black">
+                      {/* Dynamic Island / Notch */}
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100px] sm:w-[120px] h-[25px] sm:h-[30px] bg-black rounded-b-xl z-10 flex items-center justify-center">
+                        <div className="w-[40%] h-[6px] sm:h-[8px] bg-gray-800 rounded-full" />
+                      </div>
+                      
+                      {/* Screen Content */}
+                      <div className="w-full h-full overflow-hidden">
+                        <ImageWithFallback
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      </div>
+                      
+                      {/* Home Indicator */}
+                      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-[100px] sm:w-[120px] h-[4px] sm:h-[5px] bg-white/30 rounded-full" />
+                    </div>
+                    
+                    {/* Optional: Side buttons */}
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] sm:w-[4px] h-12 bg-black rounded-l-md" />
+                    <div className="absolute right-0 top-1/3 w-[3px] sm:w-[4px] h-16 bg-black rounded-r-md" />
+                  </div>
+                ) : (
+                  /* 💻 WEB PROJECT IMAGE */
+                  <div className="relative aspect-video overflow-hidden group bg-gray-100 dark:bg-gray-700">
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute inset-0"
+                    >
+                      <ImageWithFallback
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
 
-                  {/* DARK GRADIENT OVERLAY */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+                    {/* DARK GRADIENT OVERLAY */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity pointer-events-none" />
 
-                  {/* SOFT SHINE DOT */}
-                  <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-white/80 blur-sm opacity-80" />
-                </div>
+                    {/* SOFT SHINE DOT */}
+                    <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-white/80 blur-sm opacity-80" />
+                  </div>
+                )}
 
                 {/* CONTENT */}
                 <div className="p-5 sm:p-6 flex-1 flex flex-col">
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <h3 className="text-lg sm:text-xl text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
