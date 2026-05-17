@@ -50,24 +50,6 @@ export function About() {
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* DECORATIVE BOX 1 */}
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 dark:bg-blue-500 rounded-2xl -z-10"
-            />
-
-            {/* DECORATIVE BOX 2 */}
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="absolute -top-6 -left-6 w-32 h-32 bg-purple-600 dark:bg-purple-500 rounded-2xl -z-10"
-            />
           </motion.div>
         </div>
       </div>
