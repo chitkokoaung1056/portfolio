@@ -35,7 +35,7 @@ export const projects: Project[] = [
     title: "Online Grading System",
     description:
       "A Laravel + Bootstrap + MySQL project for managing student grades, results, and admin dashboard features.",
-    image: "/src/images/grading-system.png",
+    image: "OGS.png",
     tags: ["PHP", "Laravel", "Bootstrap"],
     category: "web",
   },
