@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: "TaskHub",
     description:
       "A full-stack task management system with authentication, user profiles, CRUD tasks, and Supabase backend integration.",
-    image: "Taskhub.png",
+    image: "taskhub.png",
     tags: ["Next.js", "TypeScript", "Supabase", "Tailwind", "Shadcn UI"],
     category: "web",
     githubUrl: "https://github.com/chitkokoaung1056/taskhub",
