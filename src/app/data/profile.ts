@@ -64,7 +64,7 @@ export const profileData: ProfileData = {
       items: ["React Native"],
     },
     {
-      category: "Tools & DevOps",
+      category: "Tools",
       items: ["Git", "GitHub", "Vercel", "Postman"],
     },
   ],
