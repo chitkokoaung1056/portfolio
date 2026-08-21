@@ -3,34 +3,37 @@ import { profileData } from "../data/profile";
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-12">
+    <footer className="bg-gradient-to-b from-indigo-50/70 to-violet-50/50 dark:from-[#1a1a3d] dark:to-[#12122a] text-gray-900 dark:text-white py-12 border-t border-indigo-100 dark:border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-xl mb-4">Portfolio</h3>
-            <p className="text-gray-400 dark:text-gray-500">
+            <h3 className="text-xl mb-4 font-bold">
+              CKKA
+            </h3>
+            <p className="text-gray-500 dark:text-gray-400">
               Building digital experiences that make a difference.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl mb-4">Quick Links</h3>
+            <h3 className="text-xl mb-4 font-bold">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#about" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">About</a></li>
-              <li><a href="#projects" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">Projects</a></li>
-              <li><a href="#contact" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#home" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a></li>
+              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a></li>
+              <li><a href="#projects" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a></li>
+              <li><a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-xl mb-4">Connect</h3>
+            <h3 className="text-xl mb-4 font-bold">Connect</h3>
             <div className="flex gap-4">
               <a
                 href={profileData.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors"
+                aria-label="GitHub"
+                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 <Github className="h-6 w-6" />
               </a>
@@ -39,14 +42,16 @@ export function Footer() {
                 href={profileData.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 <Linkedin className="h-6 w-6" />
               </a>
 
               <a
                 href={`mailto:${profileData.email}`}
-                className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors"
+                aria-label="Email"
+                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 <Mail className="h-6 w-6" />
               </a>
@@ -54,9 +59,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 dark:border-gray-900 pt-8 text-center">
-          <p className="text-gray-400 dark:text-gray-500 flex items-center justify-center gap-2">
-            Made with <Heart className="h-4 w-4 text-red-500 fill-current" />
+        <div className="border-t border-indigo-200/60 dark:border-white/10 pt-8 text-center">
+          <p className="text-gray-500 dark:text-gray-400 flex items-center justify-center gap-2">
+            Made with <Heart className="h-4 w-4 text-fuchsia-500 fill-current" />
             by {profileData.name} © 2026
           </p>
         </div>

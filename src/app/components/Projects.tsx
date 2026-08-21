@@ -15,7 +15,7 @@ export function Projects() {
   );
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
+    <section id="projects" className="py-20 bg-white dark:bg-[#141428]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* HEADER */}
         <motion.div
@@ -25,8 +25,11 @@ export function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl mb-4 text-gray-900 dark:text-white">
-            Featured Projects
+          <h2 className="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-gray-900 dark:text-white">
+            Featured{" "}
+            <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-fuchsia-400">
+              Projects
+            </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and
@@ -72,12 +75,12 @@ export function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -6, scale: 1.01 }}
             >
-              <Card className="overflow-hidden h-full flex flex-col dark:bg-gray-800 dark:border-gray-700 hover:shadow-2xl transition-all duration-300">
+              <Card className="overflow-hidden h-full flex flex-col dark:bg-[#1b1b36] dark:border-white/10 border-indigo-100/80 hover:shadow-2xl hover:shadow-indigo-500/15 hover:border-indigo-200 dark:hover:border-indigo-500/40 transition-all duration-300">
                 
                 {/* IMAGE SECTION - Responsive for both web and mobile */}
                 {project.category === "mobile" ? (
                   /* 📱 MOBILE DEVICE MOCKUP */
-                  <div className="relative bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 py-8 px-4 flex items-center justify-center">
+                  <div className="relative bg-gradient-to-b from-indigo-50 to-violet-100 dark:from-[#232345] dark:to-[#1b1b36] py-8 px-4 flex items-center justify-center">
                     {/* Phone Frame */}
                     <div className="relative w-[200px] sm:w-[220px] md:w-[240px] aspect-[9/19] rounded-[2rem] sm:rounded-[2.5rem] border-[6px] sm:border-[8px] border-black shadow-2xl overflow-hidden bg-black">
                       {/* Dynamic Island / Notch */}
@@ -104,7 +107,7 @@ export function Projects() {
                   </div>
                 ) : (
                   /* 💻 WEB PROJECT IMAGE */
-                  <div className="relative aspect-video overflow-hidden group bg-gray-100 dark:bg-gray-700">
+                  <div className="relative aspect-video overflow-hidden group bg-indigo-50 dark:bg-[#232345]">
                     <motion.div
                       whileHover={{ scale: 1.08 }}
                       transition={{ duration: 0.4 }}
@@ -132,7 +135,7 @@ export function Projects() {
                       {project.title}
                     </h3>
 
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className="text-xs border-indigo-200 text-indigo-600 dark:border-indigo-500/40 dark:text-indigo-300">
                       {project.category === "web" ? (
                         <>
                           <Monitor className="h-3 w-3 mr-1" />

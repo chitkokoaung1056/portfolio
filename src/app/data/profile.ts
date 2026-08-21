@@ -24,7 +24,7 @@ export interface ProfileData {
 export const profileData: ProfileData = {
   name: "Chit Ko Ko Aung",
   title: "Computer Science Student | Full-Stack Developer",
-  image: { url: "pfp2.png", alt: "Professional workspace" },
+  image: { url: "pfp.jpg", alt: "Professional workspace" },
   description:
     "Final-year Computer Science student building full-stack web apps with modern JavaScript ecosystems.",
   email: "chitkokoaung1056@gmail.com",
@@ -45,34 +45,27 @@ export const profileData: ProfileData = {
   skills: [
     {
       category: "Frontend",
-      items: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Bootstrap",
-        "Shadcn UI",
-      ],
+      items: ["Next.js", "React", "Tailwind CSS", "Shadcn UI", "Bootstrap"],
     },
     {
       category: "Backend",
-      items: ["Node.js", "Express.js", "Supabase", "REST APIs"],
+      items: ["Node.js", "REST APIs", "Supabase"],
     },
     {
-      category: "Programming Languages",
-      items: ["Java", "Python", "C", "C++", "Dart"],
+      category: "Languages",
+      items: ["TypeScript", "JavaScript", "Python", "Java"],
     },
     {
-      category: "Database",
-      items: ["MySQL", "Supabase DB", "MongoDB"],
+      category: "Databases",
+      items: ["PostgreSQL", "MongoDB"],
     },
     {
       category: "Mobile",
-      items: ["React Native", "Java + android"],
+      items: ["React Native"],
     },
     {
       category: "Tools & DevOps",
-      items: ["Git", "GitHub", "Vercel", "Figma"],
+      items: ["Git", "GitHub", "Vercel", "Postman"],
     },
   ],
 };
