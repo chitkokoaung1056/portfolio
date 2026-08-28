@@ -23,10 +23,10 @@ export function Hero() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-              className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-indigo-500 via-violet-500 to-fuchsia-500 opacity-90 blur-[2px]"
+              className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-sky-500 via-blue-500 to-cyan-400 opacity-90 blur-[2px]"
             />
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-500 shadow-2xl shadow-indigo-500/40" />
-            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#1c2240] shadow-xl">
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-sky-500 via-blue-500 to-cyan-400 shadow-2xl shadow-cyan-500/40" />
+            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#1a3352] shadow-xl">
               <ImageWithFallback
                 src={profileData.image.url}
                 alt={profileData.name}
@@ -35,7 +35,7 @@ export function Hero() {
             </div>
             <span className="absolute bottom-2 right-2 flex h-5 w-5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
-              <span className="relative inline-flex rounded-full h-5 w-5 border-2 border-[#1c2240] bg-emerald-500" />
+              <span className="relative inline-flex rounded-full h-5 w-5 border-2 border-[#1a3352] bg-emerald-500" />
             </span>
           </motion.div>
 
@@ -46,7 +46,7 @@ export function Hero() {
             className="text-5xl sm:text-6xl lg:text-7xl mb-6 font-bold tracking-tight text-gray-900 dark:text-white"
           >
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-500 bg-clip-text text-transparent dark:from-indigo-400 dark:via-violet-400 dark:to-fuchsia-400">
+            <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">
               {profileData.name}
             </span>
           </motion.h1>
@@ -75,7 +75,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-wrap gap-4 justify-center mb-12"
           >
-            <Button asChild size="lg" className="rounded-full px-8 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300">
+            <Button asChild size="lg" className="rounded-full px-8 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300">
               <a href="#contact">Get In Touch</a>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 hover:-translate-y-1 hover:scale-105 transition-all duration-300">
@@ -101,7 +101,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 aria-label={label}
                 whileHover={{ y: -4, scale: 1.1 }}
-                className="p-2.5 rounded-full text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors shadow-lg shadow-transparent hover:shadow-indigo-500/20"
+                className="p-2.5 rounded-full text-gray-500 dark:text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors shadow-lg shadow-transparent hover:shadow-cyan-500/20"
               >
                 <Icon className="h-6 w-6" />
               </motion.a>

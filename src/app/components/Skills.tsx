@@ -65,16 +65,16 @@ function SkillBar({
         <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
           {label}
         </span>
-        <span className="text-sm font-bold tabular-nums bg-gradient-to-r from-indigo-600 to-fuchsia-500 dark:from-indigo-400 dark:to-fuchsia-400 bg-clip-text text-transparent">
+        <span className="text-sm font-bold tabular-nums bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
           {animated}%
         </span>
       </div>
-      <div className="h-2.5 w-full rounded-full bg-indigo-100 dark:bg-white/10 overflow-hidden">
+      <div className="h-2.5 w-full rounded-full bg-sky-500/15 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={active ? { width: `${value}%` } : { width: 0 }}
           transition={{ duration: 1.4, delay, ease: [0.22, 1, 0.36, 1] }}
-          className="h-full rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 relative"
+          className="h-full rounded-full bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-400 relative"
         >
           <span className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent rounded-full animate-pulse" />
         </motion.div>
@@ -99,7 +99,7 @@ export function Skills() {
         >
           <h2 className="text-4xl mb-4 font-bold tracking-tight text-gray-900 dark:text-white">
             Skills &{" "}
-            <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-fuchsia-400">
+            <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
               Expertise
             </span>
           </h2>
@@ -127,9 +127,9 @@ export function Skills() {
                 }}
                 whileHover={{ y: -8, scale: 1.03 }}
               >
-                <Card className="p-6 h-full bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-indigo-500/15 hover:border-indigo-500/40 transition-all duration-300">
+                <Card className="p-6 h-full bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-cyan-500/15 hover:border-cyan-400/40 transition-all duration-300">
                   <div className="flex flex-col items-start">
-                    <div className="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-fuchsia-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-indigo-500/30">
+                    <div className="w-12 h-12 bg-gradient-to-tr from-sky-500 to-cyan-400 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/30">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
 

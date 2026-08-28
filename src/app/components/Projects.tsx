@@ -27,7 +27,7 @@ export function Projects() {
           >
           <h2 className="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-gray-900 dark:text-white">
             Featured{" "}
-            <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-fuchsia-400">
+            <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
@@ -76,12 +76,12 @@ export function Projects() {
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -10, scale: 1.02 }}
             >
-              <Card className="overflow-hidden h-full flex flex-col bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-indigo-500/15 hover:border-indigo-500/40 transition-all duration-300 group">
+              <Card className="overflow-hidden h-full flex flex-col bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-cyan-500/15 hover:border-cyan-400/40 transition-all duration-300 group">
                 
                 {/* IMAGE SECTION - Responsive for both web and mobile */}
                 {project.category === "mobile" ? (
                   /* 📱 MOBILE DEVICE MOCKUP */
-                  <div className="relative bg-gradient-to-b from-[#202744] to-[#151b33] py-8 px-4 flex items-center justify-center">
+                  <div className="relative bg-gradient-to-b from-[#162a4c] to-[#10203a] py-8 px-4 flex items-center justify-center">
                     {/* Phone Frame */}
                     <div className="relative w-[200px] sm:w-[220px] md:w-[240px] aspect-[9/19] rounded-[2rem] sm:rounded-[2.5rem] border-[6px] sm:border-[8px] border-black shadow-2xl overflow-hidden bg-black">
                       {/* Dynamic Island / Notch */}
@@ -108,7 +108,7 @@ export function Projects() {
                   </div>
                 ) : (
                   /* 💻 WEB PROJECT IMAGE */
-                  <div className="relative aspect-video overflow-hidden group bg-[#202744]">
+                  <div className="relative aspect-video overflow-hidden group bg-[#162a4c]">
                     <motion.div
                       whileHover={{ scale: 1.08 }}
                       transition={{ duration: 0.4 }}
@@ -136,7 +136,7 @@ export function Projects() {
                       {project.title}
                     </h3>
 
-                    <Badge variant="outline" className="text-xs border-indigo-200 text-indigo-600 dark:border-indigo-500/40 dark:text-indigo-300">
+                    <Badge variant="outline" className="text-xs border-cyan-500/40 text-cyan-300">
                       {project.category === "web" ? (
                         <>
                           <Monitor className="h-3 w-3 mr-1" />

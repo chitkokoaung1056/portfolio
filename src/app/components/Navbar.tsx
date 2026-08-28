@@ -14,11 +14,11 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 overflow-y-hidden bg-[#0d1226]/70 backdrop-blur-xl border-b border-white/[0.06]">
+    <nav className="fixed top-0 left-0 right-0 z-50 overflow-y-hidden bg-[#0b1220]/70 backdrop-blur-xl border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <a href="#home" className="flex items-center gap-2.5 group">
-            <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-500 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+            <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 via-blue-500 to-cyan-400 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-cyan-500/30 group-hover:scale-105 transition-transform">
               CK
             </span>
             <span className="text-xl font-bold tracking-tight text-white">
@@ -32,7 +32,7 @@ export function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="px-3.5 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-indigo-400 hover:bg-indigo-500/10 transition-colors"
+                className="px-3.5 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"
               >
                 {item.name}
               </a>
@@ -60,7 +60,7 @@ export function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2.5 rounded-lg font-medium text-gray-300 hover:text-indigo-400 hover:bg-indigo-500/10 transition-colors"
+                className="block px-3 py-2.5 rounded-lg font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

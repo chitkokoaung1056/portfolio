@@ -19,7 +19,7 @@ export function About() {
           >
             <h2 className="text-4xl mb-6 font-bold tracking-tight text-gray-900 dark:text-white">
               About{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-fuchsia-400">
+              <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
                 Me
               </span>
             </h2>
@@ -68,10 +68,10 @@ export function About() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
-                className="absolute -inset-2 rounded-full bg-gradient-to-tr from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 blur-lg"
+                className="absolute -inset-2 rounded-full bg-gradient-to-tr from-sky-500 via-blue-500 to-cyan-400 opacity-80 blur-lg"
               />
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-500 shadow-2xl shadow-indigo-500/30" />
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#1c2240] shadow-2xl">
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-sky-500 via-blue-500 to-cyan-400 shadow-2xl shadow-cyan-500/30" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#1a3352] shadow-2xl">
                 <ImageWithFallback
                   src={profileData.image.url}
                   alt={profileData.image.alt}

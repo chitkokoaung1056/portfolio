@@ -37,7 +37,7 @@ export function Contact() {
         >
           <h2 className="text-4xl mb-4 font-bold tracking-tight text-gray-900 dark:text-white">
             Get In{" "}
-            <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-fuchsia-400">
+            <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
@@ -60,9 +60,9 @@ export function Contact() {
                 transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ scale: 1.03, y: -3 }}
               >
-                <Card className="p-6 bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-indigo-500/15 hover:border-indigo-500/40 transition-all duration-300">
+                <Card className="p-6 bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-cyan-500/15 hover:border-cyan-400/40 transition-all duration-300">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-fuchsia-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-indigo-500/30">
+                    <div className="w-12 h-12 bg-gradient-to-tr from-sky-500 to-cyan-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/30">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
 
@@ -74,7 +74,7 @@ export function Contact() {
                       {info.href ? (
                         <a
                           href={info.href}
-                          className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                          className="text-gray-600 dark:text-gray-300 hover:text-cyan-400 transition-colors"
                         >
                           {info.value}
                         </a>

@@ -18,10 +18,10 @@ export function Footer() {
           <div>
             <h3 className="text-xl mb-4 font-bold">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a></li>
-              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a></li>
-              <li><a href="#projects" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a></li>
-              <li><a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a></li>
+              <li><a href="#home" className="text-gray-600 dark:text-gray-400 hover:text-cyan-400 transition-colors">Home</a></li>
+              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-cyan-400 transition-colors">About</a></li>
+              <li><a href="#projects" className="text-gray-600 dark:text-gray-400 hover:text-cyan-400 transition-colors">Projects</a></li>
+              <li><a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-cyan-400 transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -33,7 +33,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-cyan-400 transition-colors"
               >
                 <Github className="h-6 w-6" />
               </a>
@@ -43,7 +43,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-cyan-400 transition-colors"
               >
                 <Linkedin className="h-6 w-6" />
               </a>
@@ -51,7 +51,7 @@ export function Footer() {
               <a
                 href={`mailto:${profileData.email}`}
                 aria-label="Email"
-                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="p-2 -m-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-cyan-400 transition-colors"
               >
                 <Mail className="h-6 w-6" />
               </a>
@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-gray-500 dark:text-gray-400 flex items-center justify-center gap-2">
-            Made with <Heart className="h-4 w-4 text-fuchsia-500 fill-current" />
+            Made with <Heart className="h-4 w-4 text-cyan-400 fill-current" />
             by {profileData.name} © 2026
           </p>
         </div>
