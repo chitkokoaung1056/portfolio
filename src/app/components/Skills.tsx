@@ -8,29 +8,93 @@ import {
   Braces,
 } from "lucide-react";
 
-import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 import { Card } from "./ui/card";
 import { profileData } from "../data/profile";
 
 const iconMap: Record<string, any> = {
   Frontend: Code2,
   Backend: Database,
-  "Programming Languages": Braces, // ✅ different icon now
+  "Programming Languages": Braces,
   Database: Database,
   Mobile: Smartphone,
   "Tools & DevOps": Zap,
   "Web Technologies": Globe,
   "UI/UX Design": Palette,
 };
-export function Skills() {
+
+function useCounter(target: number, active: boolean, duration = 1400) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!active) return;
+    let start: number | null = null;
+    let raf: number;
+    const step = (ts: number) => {
+      if (start === null) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * target));
+      if (progress < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [active, target, duration]);
+
+  return count;
+}
+
+function SkillBar({
+  label,
+  value,
+  active,
+  delay,
+}: {
+  label: string;
+  value: number;
+  active: boolean;
+  delay: number;
+}) {
+  const animated = useCounter(value, active);
+
   return (
-    <section id="skills" className="py-20 bg-gradient-to-b from-indigo-50/70 to-violet-50/50 dark:from-[#1a1a3d] dark:to-[#12122a]">
+    <div>
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+          {label}
+        </span>
+        <span className="text-sm font-bold tabular-nums bg-gradient-to-r from-indigo-600 to-fuchsia-500 dark:from-indigo-400 dark:to-fuchsia-400 bg-clip-text text-transparent">
+          {animated}%
+        </span>
+      </div>
+      <div className="h-2.5 w-full rounded-full bg-indigo-100 dark:bg-white/10 overflow-hidden">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={active ? { width: `${value}%` } : { width: 0 }}
+          transition={{ duration: 1.4, delay, ease: [0.22, 1, 0.36, 1] }}
+          className="h-full rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 relative"
+        >
+          <span className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent rounded-full animate-pulse" />
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+export function Skills() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  return (
+    <section id="skills" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl mb-4 font-bold tracking-tight text-gray-900 dark:text-white">
@@ -46,28 +110,41 @@ export function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {profileData.skills.map((skill, index) => {
             const Icon = iconMap[skill.category] || Code2;
 
             return (
               <motion.div
                 key={skill.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40, rotateX: 15 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
+                transition={{
+                  duration: 0.6,
+                  delay: isInView ? index * 0.1 : 0,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ y: -8, scale: 1.03 }}
               >
-                <Card className="p-6 h-full border-indigo-100/80 dark:bg-[#1b1b36] dark:border-white/10 hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-200 dark:hover:border-indigo-500/40 transition-all duration-300">
+                <Card className="p-6 h-full bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-indigo-500/15 hover:border-indigo-500/40 transition-all duration-300">
                   <div className="flex flex-col items-start">
-                    <div className="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-violet-500 rounded-xl flex items-center justify-center mb-4 shadow-md shadow-indigo-500/25">
+                    <div className="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-fuchsia-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-indigo-500/30">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
 
-                    <h3 className="text-xl mb-2 text-gray-900 dark:text-white">
+                    <h3 className="text-xl mb-3 text-gray-900 dark:text-white">
                       {skill.category}
                     </h3>
+
+                    <div className="w-full mb-4">
+                      <SkillBar
+                        label={skill.category}
+                        value={skill.proficiency}
+                        active={isInView}
+                        delay={0.2 + index * 0.1}
+                      />
+                    </div>
 
                     <p className="text-gray-600 dark:text-gray-300">
                       {skill.items.join(", ")}

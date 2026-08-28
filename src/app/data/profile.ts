@@ -18,13 +18,14 @@ export interface ProfileData {
   skills: {
     category: string;
     items: string[];
+    proficiency: number;
   }[];
 }
 
 export const profileData: ProfileData = {
   name: "Chit Ko Ko Aung",
   title: "Computer Science Student | Full-Stack Developer",
-  image: { url: "pfp.jpg", alt: "Professional workspace" },
+  image: { url: "profile.jpg", alt: "Chit Ko Ko Aung" },
   description:
     "Final-year Computer Science student building full-stack web apps with modern JavaScript ecosystems.",
   email: "chitkokoaung1056@gmail.com",
@@ -46,26 +47,32 @@ export const profileData: ProfileData = {
     {
       category: "Frontend",
       items: ["Next.js", "React", "Tailwind CSS", "Shadcn UI", "Bootstrap"],
+      proficiency: 92,
     },
     {
       category: "Backend",
       items: ["Node.js", "REST APIs", "Supabase"],
+      proficiency: 85,
     },
     {
       category: "Languages",
       items: ["TypeScript", "JavaScript", "Python", "Java"],
+      proficiency: 88,
     },
     {
       category: "Databases",
       items: ["PostgreSQL", "MongoDB"],
+      proficiency: 80,
     },
     {
       category: "Mobile",
       items: ["React Native"],
+      proficiency: 75,
     },
     {
       category: "Tools",
       items: ["Git", "GitHub", "Vercel", "Postman"],
+      proficiency: 90,
     },
   ],
 };

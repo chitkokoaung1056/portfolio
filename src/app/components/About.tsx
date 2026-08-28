@@ -6,16 +6,16 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-white dark:bg-[#141428] overflow-x-hidden"
+      className="py-20 overflow-x-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* LEFT TEXT */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="text-4xl mb-6 font-bold tracking-tight text-gray-900 dark:text-white">
               About{" "}
@@ -24,32 +24,54 @@ export function About() {
               </span>
             </h2>
 
-            <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed"
+            >
               {profileData.about.intro}
-            </p>
+            </motion.p>
 
-            <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed"
+            >
               {profileData.about.experience}
-            </p>
+            </motion.p>
 
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed"
+            >
               {profileData.about.passion}
-            </p>
+            </motion.p>
           </motion.div>
 
           {/* RIGHT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex justify-center"
           >
             {/* CIRCULAR PHOTO WITH GRADIENT RING */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80">
-              <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 blur-lg" />
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-indigo-500 via-violet-500 to-fuchsia-500" />
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-[#171730] shadow-2xl">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+                className="absolute -inset-2 rounded-full bg-gradient-to-tr from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 blur-lg"
+              />
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-500 shadow-2xl shadow-indigo-500/30" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#1c2240] shadow-2xl">
                 <ImageWithFallback
                   src={profileData.image.url}
                   alt={profileData.image.alt}

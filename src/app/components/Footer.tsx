@@ -3,7 +3,7 @@ import { profileData } from "../data/profile";
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-indigo-50/70 to-violet-50/50 dark:from-[#1a1a3d] dark:to-[#12122a] text-gray-900 dark:text-white py-12 border-t border-indigo-100 dark:border-white/10">
+    <footer className="text-white py-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
@@ -59,7 +59,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-indigo-200/60 dark:border-white/10 pt-8 text-center">
+        <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-gray-500 dark:text-gray-400 flex items-center justify-center gap-2">
             Made with <Heart className="h-4 w-4 text-fuchsia-500 fill-current" />
             by {profileData.name} © 2026

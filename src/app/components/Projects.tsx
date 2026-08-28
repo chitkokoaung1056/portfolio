@@ -15,16 +15,16 @@ export function Projects() {
   );
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-[#141428]">
+    <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-12"
+          >
           <h2 className="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-gray-900 dark:text-white">
             Featured{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-fuchsia-400">
@@ -38,13 +38,13 @@ export function Projects() {
         </motion.div>
 
         {/* FILTERS */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex justify-center gap-3 sm:gap-4 mb-12 flex-wrap"
-        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="flex justify-center gap-3 sm:gap-4 mb-12 flex-wrap"
+          >
           <Button
             onClick={() => setActiveFilter("web")}
             variant={activeFilter === "web" ? "default" : "outline"}
@@ -69,18 +69,19 @@ export function Projects() {
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              layout
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6, scale: 1.01 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -10, scale: 1.02 }}
             >
-              <Card className="overflow-hidden h-full flex flex-col dark:bg-[#1b1b36] dark:border-white/10 border-indigo-100/80 hover:shadow-2xl hover:shadow-indigo-500/15 hover:border-indigo-200 dark:hover:border-indigo-500/40 transition-all duration-300">
+              <Card className="overflow-hidden h-full flex flex-col bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-indigo-500/15 hover:border-indigo-500/40 transition-all duration-300 group">
                 
                 {/* IMAGE SECTION - Responsive for both web and mobile */}
                 {project.category === "mobile" ? (
                   /* 📱 MOBILE DEVICE MOCKUP */
-                  <div className="relative bg-gradient-to-b from-indigo-50 to-violet-100 dark:from-[#232345] dark:to-[#1b1b36] py-8 px-4 flex items-center justify-center">
+                  <div className="relative bg-gradient-to-b from-[#202744] to-[#151b33] py-8 px-4 flex items-center justify-center">
                     {/* Phone Frame */}
                     <div className="relative w-[200px] sm:w-[220px] md:w-[240px] aspect-[9/19] rounded-[2rem] sm:rounded-[2.5rem] border-[6px] sm:border-[8px] border-black shadow-2xl overflow-hidden bg-black">
                       {/* Dynamic Island / Notch */}
@@ -107,7 +108,7 @@ export function Projects() {
                   </div>
                 ) : (
                   /* 💻 WEB PROJECT IMAGE */
-                  <div className="relative aspect-video overflow-hidden group bg-indigo-50 dark:bg-[#232345]">
+                  <div className="relative aspect-video overflow-hidden group bg-[#202744]">
                     <motion.div
                       whileHover={{ scale: 1.08 }}
                       transition={{ duration: 0.4 }}
