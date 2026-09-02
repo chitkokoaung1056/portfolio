@@ -37,11 +37,11 @@ export const profileData: ProfileData = {
   },
   about: {
     intro:
-      "I'm a final-year Computer Science student at UCSM, focused on building full-stack web applications using modern technologies like Next.js, TypeScript, and Supabase.",
+      "I'm a final-year Computer Science student at the University of Computer Studies, Mandalay, focused on building modern web applications with TypeScript, React, Next.js, Node.js, and Supabase.",
     experience:
-      "I have built multiple real-world projects including TaskHub (task management system with Supabase auth), MovieNest (movie discovery UI with pagination and search), and various full-stack CRUD applications using Laravel, React, and Next.js.",
+      "I enjoy solving problems, building real-world projects, and learning how to design reliable and scalable software.",
     passion:
-      "I enjoy designing clean UI systems, building scalable backend logic, and learning infrastructure concepts. I'm especially interested in backend systems, authentication flows, and developer experience.",
+      "I'm currently seeking an internship or junior software developer role where I can contribute, learn, and grow as a software engineer.",
   },
   skills: [
     {

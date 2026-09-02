@@ -8,10 +8,7 @@ import {
   Braces,
 } from "lucide-react";
 
-import { useEffect, useState } from "react";
-import { motion, useInView } from "motion/react";
-import { useRef } from "react";
-import { Card } from "./ui/card";
+import { motion } from "motion/react";
 import { profileData } from "../data/profile";
 
 const iconMap: Record<string, any> = {
@@ -25,68 +22,7 @@ const iconMap: Record<string, any> = {
   "UI/UX Design": Palette,
 };
 
-function useCounter(target: number, active: boolean, duration = 1400) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!active) return;
-    let start: number | null = null;
-    let raf: number;
-    const step = (ts: number) => {
-      if (start === null) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(eased * target));
-      if (progress < 1) raf = requestAnimationFrame(step);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [active, target, duration]);
-
-  return count;
-}
-
-function SkillBar({
-  label,
-  value,
-  active,
-  delay,
-}: {
-  label: string;
-  value: number;
-  active: boolean;
-  delay: number;
-}) {
-  const animated = useCounter(value, active);
-
-  return (
-    <div>
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
-          {label}
-        </span>
-        <span className="text-sm font-bold tabular-nums bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
-          {animated}%
-        </span>
-      </div>
-      <div className="h-2.5 w-full rounded-full bg-sky-500/15 overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={active ? { width: `${value}%` } : { width: 0 }}
-          transition={{ duration: 1.4, delay, ease: [0.22, 1, 0.36, 1] }}
-          className="h-full rounded-full bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-400 relative"
-        >
-          <span className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent rounded-full animate-pulse" />
-        </motion.div>
-      </div>
-    </div>
-  );
-}
-
 export function Skills() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section id="skills" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,21 +33,21 @@ export function Skills() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl mb-4 font-bold tracking-tight text-gray-900 dark:text-white">
+          <h2 className="text-4xl mb-4 font-bold tracking-tight text-white">
             Skills &{" "}
             <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
               Expertise
             </span>
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             A comprehensive set of technical skills and tools I use to bring
             ideas to life
           </p>
         </motion.div>
 
-        <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {profileData.skills.map((skill, index) => {
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {profileData.skills.map((skill) => {
             const Icon = iconMap[skill.category] || Code2;
 
             return (
@@ -122,35 +58,36 @@ export function Skills() {
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.6,
-                  delay: isInView ? index * 0.1 : 0,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                whileHover={{ y: -8, scale: 1.03 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="will-change-transform"
               >
-                <Card className="p-6 h-full bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-cyan-500/15 hover:border-cyan-400/40 transition-all duration-300">
-                  <div className="flex flex-col items-start">
-                    <div className="w-12 h-12 bg-gradient-to-tr from-sky-500 to-cyan-400 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/30">
-                      <Icon className="h-6 w-6 text-white" />
+                <div className="relative p-6 h-full rounded-2xl overflow-hidden group">
+                  <div className="absolute inset-0 rounded-2xl" style={{ backgroundColor: "rgba(255,255,255,0.04)" }} />
+                  <div className="absolute inset-0 rounded-2xl backdrop-blur-[16px] backdrop-saturate-150" />
+                  <div className="absolute inset-0 rounded-2xl border" style={{ borderColor: "rgba(255,255,255,0.09)" }} />
+                  
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#3b82f6]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-[#3b82f6]/5 via-transparent to-[#60a5fa]/5" />
+
+                  <div className="relative flex flex-col items-start">
+                    <div className="relative mb-4">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-[#3b82f6] to-[#60a5fa] rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
+                      <div className="relative w-12 h-12 bg-gradient-to-tr from-[#3b82f6] to-[#60a5fa] rounded-xl flex items-center justify-center">
+                        <Icon className="h-6 w-6 text-white" />
+                      </div>
                     </div>
 
-                    <h3 className="text-xl mb-3 text-gray-900 dark:text-white">
+                    <h3 className="text-lg mb-3 text-white font-semibold">
                       {skill.category}
                     </h3>
 
-                    <div className="w-full mb-4">
-                      <SkillBar
-                        label={skill.category}
-                        value={skill.proficiency}
-                        active={isInView}
-                        delay={0.2 + index * 0.1}
-                      />
-                    </div>
-
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-400 text-sm leading-relaxed">
                       {skill.items.join(", ")}
                     </p>
                   </div>
-                </Card>
+                </div>
               </motion.div>
             );
           })}

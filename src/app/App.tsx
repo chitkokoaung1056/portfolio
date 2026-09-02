@@ -11,11 +11,17 @@ import { Footer } from "./components/Footer";
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="relative min-h-screen bg-background text-foreground overflow-y-hidden *:overflow-y-hidden">
-        {/* Subtle film-grain texture for depth */}
+      <div className="relative min-h-screen text-foreground overflow-y-hidden *:overflow-y-hidden">
+        <div className="fixed inset-0 z-0 bg-[#0a0e14]" />
+        <div className="fixed inset-0 z-0" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
+          backgroundSize: '56px 56px'
+        }} />
+        <div className="fixed top-0 left-0 w-[520px] h-[520px] bg-[#60a5fa] opacity-20 blur-[120px] rounded-full z-0" />
+        <div className="fixed top-0 right-0 w-[460px] h-[460px] bg-[#3b82f6] opacity-15 blur-[120px] rounded-full z-0" />
+        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[420px] h-[420px] bg-[#22d3ee] opacity-10 blur-[120px] rounded-full z-0" />
         <div className="pointer-events-none fixed inset-0 z-0 bg-grain opacity-[0.25] mix-blend-overlay" />
 
-        {/* Scroll progress indicator at the very top */}
         <ScrollProgress />
 
         <div className="relative z-10">

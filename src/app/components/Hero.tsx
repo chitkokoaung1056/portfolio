@@ -17,7 +17,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.6, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ scale: 1.05, rotate: 4 }}
+            whileHover={{ scale: 1.05 }}
             className="relative mx-auto mb-8 w-44 h-44 sm:w-52 sm:h-52"
           >
             <motion.div
@@ -42,7 +42,7 @@ export function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="text-5xl sm:text-6xl lg:text-7xl mb-6 font-bold tracking-tight text-gray-900 dark:text-white"
           >
             Hi, I'm{" "}
@@ -54,7 +54,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-200 mb-4"
           >
             {profileData.title}
@@ -63,7 +63,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-12"
           >
             {profileData.description}
@@ -72,7 +72,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-wrap gap-4 justify-center mb-12"
           >
             <Button asChild size="lg" className="rounded-full px-8 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300">
@@ -86,7 +86,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.55 }}
+            transition={{ duration: 0.7 }}
             className="flex gap-6 justify-center"
           >
             {[
@@ -111,7 +111,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.7 }}
+            transition={{ duration: 0.7 }}
             className="mt-16"
           >
             <motion.a

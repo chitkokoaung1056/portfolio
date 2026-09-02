@@ -1,6 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
-import { Card } from "./ui/card";
 import { profileData } from "../data/profile";
 
 export function Contact() {
@@ -35,57 +34,69 @@ export function Contact() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl mb-4 font-bold tracking-tight text-gray-900 dark:text-white">
+          <h2 className="text-4xl mb-4 font-bold tracking-tight text-white">
             Get In{" "}
-            <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3b82f6] to-[#60a5fa] bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from
             you!
           </p>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto space-y-6">
-          {contactInfo.map((info, index) => {
+        <div className="max-w-2xl mx-auto space-y-4">
+          {contactInfo.map((info) => {
             const Icon = info.icon;
 
             return (
               <motion.div
                 key={info.title}
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -4 }}
+                className="will-change-transform"
               >
-                <Card className="p-6 bg-card border-white/[0.08] hover:shadow-2xl hover:shadow-cyan-500/15 hover:border-cyan-400/40 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-tr from-sky-500 to-cyan-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/30">
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
+                <div className="relative rounded-2xl overflow-hidden group">
+                  <div className="absolute inset-0 rounded-2xl" style={{ backgroundColor: "rgba(255,255,255,0.04)" }} />
+                  <div className="absolute inset-0 rounded-2xl backdrop-blur-[16px] backdrop-saturate-150" />
+                  <div className="absolute inset-0 rounded-2xl border" style={{ borderColor: "rgba(255,255,255,0.09)" }} />
+                  
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#3b82f6]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-[#3b82f6]/5 via-transparent to-[#60a5fa]/5" />
 
-                    <div>
-                      <h4 className="mb-1 text-gray-900 dark:text-white">
-                        {info.title}
-                      </h4>
+                  <div className="relative p-6">
+                    <div className="flex items-center gap-4">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#3b82f6] to-[#60a5fa] rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
+                        <div className="relative w-12 h-12 bg-gradient-to-tr from-[#3b82f6] to-[#60a5fa] rounded-xl flex items-center justify-center">
+                          <Icon className="h-5 w-5 text-white" />
+                        </div>
+                      </div>
 
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          className="text-gray-600 dark:text-gray-300 hover:text-cyan-400 transition-colors"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-gray-600 dark:text-gray-300">
-                          {info.value}
-                        </p>
-                      )}
+                      <div className="flex-1">
+                        <h4 className="text-sm text-gray-400 mb-0.5">
+                          {info.title}
+                        </h4>
+                        {info.href ? (
+                          <a
+                            href={info.href}
+                            className="text-white hover:text-[#60a5fa] transition-colors font-medium"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-white font-medium">
+                            {info.value}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </Card>
+                </div>
               </motion.div>
             );
           })}
