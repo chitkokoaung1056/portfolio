@@ -9,3 +9,26 @@
     transform: translate(-20px, 20px) scale(0.9);
   }
 }
+
+@keyframes line-run {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: -1200px;
+  }
+}
+
+.animated-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 120px,
+    rgba(255, 255, 255, 0.04) 120px,
+    rgba(255, 255, 255, 0.04) 121px,
+    transparent 121px,
+    transparent 240px
+  );
+  background-size: 100% 1200px;
+  animation: line-run 40s linear infinite;
+}

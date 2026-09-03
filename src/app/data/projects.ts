@@ -12,6 +12,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Online Grading System",
+    description:
+      "A Laravel + Bootstrap + MySQL project for managing student grades, results, and admin dashboard features.",
+    image: "OGS.png",
+    tags: ["PHP", "Laravel", "Bootstrap"],
+    category: "web",
+    githubUrl: "https://github.com/chitkokoaung1056/Online-Gradng-System",
+  },
+  {
     title: "TaskHub",
     description:
       "A full-stack task management system with authentication, user profiles, CRUD tasks, and Supabase backend integration.",
@@ -31,14 +40,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/chitkokoaung1056/movienest",
     demoUrl: "https://movie-nest-beige.vercel.app/",
   },
-  {
-    title: "Online Grading System",
-    description:
-      "A Laravel + Bootstrap + MySQL project for managing student grades, results, and admin dashboard features.",
-    image: "OGS.png",
-    tags: ["PHP", "Laravel", "Bootstrap"],
-    category: "web",
-  },
+
   {
     title: "NoxWeather",
     description:
@@ -61,7 +63,7 @@ export const projects: Project[] = [
     image: "Notezy.png",
     tags: ["React Native", "AsyncStorage"],
     category: "mobile",
-    
+
     githubUrl: "https://github.com/chitkokoaung1056/notezy",
   },
 ];
