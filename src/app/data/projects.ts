@@ -11,15 +11,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    title: "Online Grading System",
-    description:
-      "A Laravel + Bootstrap + MySQL project for managing student grades, results, and admin dashboard features.",
-    image: "OGS.png",
-    tags: ["PHP", "Laravel", "Bootstrap"],
-    category: "web",
-    githubUrl: "https://github.com/chitkokoaung1056/Online-Gradng-System",
-  },
+  
   {
     title: "TaskHub",
     description:
@@ -39,6 +31,14 @@ export const projects: Project[] = [
     category: "web",
     githubUrl: "https://github.com/chitkokoaung1056/movienest",
     demoUrl: "https://movie-nest-beige.vercel.app/",
+  },{
+    title: "Online Grading System",
+    description:
+      "A Laravel + Bootstrap + MySQL project for managing student grades, results, and admin dashboard features.",
+    image: "OGS.png",
+    tags: ["PHP", "Laravel", "Bootstrap"],
+    category: "web",
+    githubUrl: "https://github.com/chitkokoaung1056/Online-Gradng-System",
   },
 
   {
