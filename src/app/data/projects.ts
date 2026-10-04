@@ -26,7 +26,7 @@ export const projects: Project[] = [
     title: "MovieNest",
     description:
       "Modern movie discovery UI built with Next.js featuring search, trending section, pagination, and responsive design.",
-    image: "MovieNest.png",
+    image: "/MovieNest.png",
     tags: ["Next.js", "React", "Tailwind", "Shadcn UI"],
     category: "web",
     githubUrl: "https://github.com/chitkokoaung1056/movienest",
